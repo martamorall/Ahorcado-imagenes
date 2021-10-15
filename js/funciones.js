@@ -33,7 +33,7 @@ function seleccionImagenes(evt){
                 imm.title = nimagen;
                 
                 //Evento que solo coge el nombre de la última imagen
-                imm.onclick=crearGuiones(nimagen);
+                imm.onclick=crearGuiones;
 
                 document.getElementById("contenedorImagen").insertBefore(imm, null);
                 
@@ -48,7 +48,8 @@ function seleccionImagenes(evt){
 }
 
 //Reemplaza cada caracter de la palabra insertada por guiones y los muestra en el espacio de resultado
-function crearGuiones(nimagen){
+function crearGuiones(){
+    nimagen=this.title;
     palabraA=nimagen.toUpperCase();
     guiones=palabraA.replace(/[a-z]/gi, "-");
     resultado.innerHTML=guiones;
